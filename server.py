@@ -25,6 +25,5 @@ def main():
     # running the server
     server.serve_forever()
 
-
-
-main()
+if __name__=="__main__":
+    main()
