@@ -5,20 +5,25 @@ from pyftpdlib.servers import FTPServer
 
 def main():
     authorizer=DummyAuthorizer()
-    authorizer.add_user("ab369","123","/home/arindam/Desktop/data",perm="elradfmw")# authorizing the client if genuine or not
+    # authorizing the client if genuine or not
+    # also setting the permissions that client would have in the server(Eg.read,write etc.)
+    # change permissions in perm as required
+    authorizer.add_user("ab369","123","/home/arindam/Desktop/data",perm="elradfmw")
     # In the above statement the client is directed to a particular directory of the server
     authorizer.add_anonymous("/home/arindam/Desktop/data")
-
-    handler=FTPHandler# FTP handler is created
+    # FTP handler is created
+    handler=FTPHandler
     handler.authorizer=authorizer
     handler.banner="connected to AB server"
+    # creating address argument
     address=('localhost',8000)
-    server=FTPServer(address,handler)# server module being given parameters for network settings
+    # server module being given parameters for network settings
+    server=FTPServer(address,handler)
     # setting maximum number of clients attaching to the server
     server.max_cons=100
     server.max_cons_per_ip=5
- 
-    server.serve_forever()# running the server
+    # running the server
+    server.serve_forever()
 
 
 
