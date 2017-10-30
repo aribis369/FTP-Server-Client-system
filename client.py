@@ -1,6 +1,7 @@
 from ftplib import FTP
 import glob
 import os
+import sys
 
 
 ftp=FTP()
@@ -73,6 +74,8 @@ def interface():
 
 
 if __name__=="__main__":
+    k=0
+    print "initialise"
     interface()
 
 
