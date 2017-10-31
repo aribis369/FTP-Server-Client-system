@@ -3,7 +3,10 @@ import glob
 import os
 import sys
 import tnsorflow
-
+import numpy as np
+import pandas as pd
+b=[1,2,3,4,5]
+print b
 ftp=FTP()
 # setting connection with the server taking username and password as input from the user
 def conn():
